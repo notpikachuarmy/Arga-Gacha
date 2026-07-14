@@ -27,10 +27,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
+          registry-url: https://registry.npmjs.org/
+
+      - name: Force public npm registry
+        run: npm config set registry https://registry.npmjs.org/
 
       - name: Install dependencies
-        run: npm install --verbose --foreground-scripts --no-audit --no-fund
+        run: npm install --no-audit --no-fund
 
       - name: Build game
         run: npm run build
