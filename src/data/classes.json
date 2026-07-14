@@ -1,0 +1,9 @@
+[
+  {"id":"vanguardia","name":"Vanguardia","strongAgainst":"duelista","icon":"assets/ui/class/vanguardia.png"},
+  {"id":"duelista","name":"Duelista","strongAgainst":"tirador","icon":"assets/ui/class/duelista.png"},
+  {"id":"tirador","name":"Tirador","strongAgainst":"arcanista","icon":"assets/ui/class/tirador.png"},
+  {"id":"arcanista","name":"Arcanista","strongAgainst":"guardian","icon":"assets/ui/class/arcanista.png"},
+  {"id":"guardian","name":"Guardián","strongAgainst":"vanguardia","icon":"assets/ui/class/guardian.png"},
+  {"id":"apoyo","name":"Apoyo","strongAgainst":null,"icon":"assets/ui/class/apoyo.png"},
+  {"id":"irregular","name":"Irregular","strongAgainst":null,"icon":"assets/ui/class/irregular.png"}
+]

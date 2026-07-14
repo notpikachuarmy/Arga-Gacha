@@ -1,0 +1,262 @@
+[
+  {
+    "id": "caballero_mariposa",
+    "name": "Caballero Mariposa",
+    "worldId": "hoennia",
+    "bannerId": "hoennia_standard",
+    "classId": "duelista",
+    "rarity": 5,
+    "lore": "Una persona común elegida por el destino para portar el sagrado manto del Caballero Mariposa. Tras ser bendecido por los dioses con un traje que actúa como artefacto divino, utiliza la mariposamancia para combatir la oscuridad y proteger el equilibrio del mundo.",
+    "portrait": "assets/characters/portrait/caballeromariposa.png",
+    "sprite": "assets/characters/sprite/caballeromariposa.png",
+    "stats": {
+      "hp": 258,
+      "attack": 90,
+      "defense": 52,
+      "speed": 116
+    }
+  },
+  {
+    "id": "detective_lince",
+    "name": "Detective Lince",
+    "worldId": "hoennia",
+    "bannerId": "hoennia_standard",
+    "classId": "guardian",
+    "rarity": 3,
+    "lore": "Un curtido inspector de Hoennia que detesta a los supervillanos, a quienes considera egocéntricos que complican el trabajo policial. Su sentido del deber le impide mirar hacia otro lado cuando alguien necesita ayuda.",
+    "portrait": "assets/characters/portrait/detectivelince.png",
+    "sprite": "assets/characters/sprite/detectivelince.png",
+    "stats": {
+      "hp": 319,
+      "attack": 43,
+      "defense": 87,
+      "speed": 74
+    }
+  },
+  {
+    "id": "capitan_blaze",
+    "name": "Capitán Blaze",
+    "worldId": "hoennia",
+    "bannerId": "hoennia_standard",
+    "classId": "tirador",
+    "rarity": 2,
+    "lore": "Un musculoso bombero de Hoennia al borde de la jubilación. Jamás retrocede ante el peligro y no da un incendio por apagado hasta haber rescatado a la última criatura con vida.",
+    "portrait": "assets/characters/portrait/capitanblaze.png",
+    "sprite": "assets/characters/sprite/capitanblaze.png",
+    "stats": {
+      "hp": 175,
+      "attack": 62,
+      "defense": 34,
+      "speed": 110
+    }
+  },
+  {
+    "id": "iron_thunder",
+    "name": "Iron Thunder",
+    "worldId": "hoennia",
+    "bannerId": "hoennia_standard",
+    "classId": "duelista",
+    "rarity": 5,
+    "lore": "Surge es un exmilitar que desertó para convertirse en supercriminal. Pilota un prototipo de armadura eléctrica robado tras haber sido sujeto de pruebas de un experimento táctico ultrasecreto.",
+    "portrait": "assets/characters/portrait/ironthunder.png",
+    "sprite": "assets/characters/sprite/ironthunder.png",
+    "stats": {
+      "hp": 258,
+      "attack": 90,
+      "defense": 52,
+      "speed": 116
+    }
+  },
+  {
+    "id": "el_arquitecto",
+    "name": "El Arquitecto",
+    "worldId": "hoennia",
+    "bannerId": "hoennia_standard",
+    "classId": "guardian",
+    "rarity": 4,
+    "lore": "Un exdiseñador de juegos de rol obsesionado con la simetría y el control. Construye laberintos mortales y ve la realidad como su tablero personal.",
+    "portrait": "assets/characters/portrait/elarquitecto.png",
+    "sprite": "assets/characters/sprite/elarquitecto.png",
+    "stats": {
+      "hp": 353,
+      "attack": 47,
+      "defense": 97,
+      "speed": 76
+    }
+  },
+  {
+    "id": "rey_abeja",
+    "name": "Rey Abeja",
+    "worldId": "hoennia",
+    "bannerId": "hoennia_standard",
+    "classId": "apoyo",
+    "rarity": 4,
+    "lore": "Un entomólogo radical que utiliza tecnología bioacústica para controlar enjambres llamados Weedles y pretende transformar a la humanidad en híbridos humano-abeja.",
+    "portrait": "assets/characters/portrait/reyabeja.png",
+    "sprite": "assets/characters/sprite/reyabeja.png",
+    "stats": {
+      "hp": 260,
+      "attack": 47,
+      "defense": 60,
+      "speed": 98
+    }
+  },
+  {
+    "id": "aguijon",
+    "name": "Aguijón",
+    "worldId": "hoennia",
+    "bannerId": "hoennia_standard",
+    "classId": "vanguardia",
+    "rarity": 3,
+    "lore": "El letal asesino personal y mano derecha de Rey Abeja. Usa toxinas experimentales y ejecuta sus encargos con precisión fría y despiadada.",
+    "portrait": "assets/characters/portrait/aguijon.png",
+    "sprite": "assets/characters/sprite/aguijon.png",
+    "stats": {
+      "hp": 291,
+      "attack": 47,
+      "defense": 74,
+      "speed": 84
+    }
+  },
+  {
+    "id": "sacerdotisa_chime",
+    "name": "Sacerdotisa Chime",
+    "worldId": "hoennia",
+    "bannerId": "hoennia_standard",
+    "classId": "irregular",
+    "rarity": 5,
+    "lore": "Alta sacerdotisa del Culto de Chimech-o. Canaliza las frecuencias místicas del demonio del sonido mediante rituales y cánticos disonantes.",
+    "portrait": "assets/characters/portrait/sacerdotisachime.png",
+    "sprite": "assets/characters/sprite/sacerdotisachime.png",
+    "stats": {
+      "hp": 299,
+      "attack": 79,
+      "defense": 71,
+      "speed": 109
+    }
+  },
+  {
+    "id": "xenotar",
+    "name": "Xenotar",
+    "worldId": "hoennia",
+    "bannerId": "hoennia_standard",
+    "classId": "duelista",
+    "rarity": 2,
+    "lore": "Un soldado reptiliano extraterrestre varado en la Tierra. Busca tecnología para escapar y elimina a cualquiera que se interponga en su camino.",
+    "portrait": "assets/characters/portrait/xenotar.png",
+    "sprite": "assets/characters/sprite/xenotar.png",
+    "stats": {
+      "hp": 190,
+      "attack": 66,
+      "defense": 38,
+      "speed": 106
+    }
+  },
+  {
+    "id": "vex_9",
+    "name": "Vex-9",
+    "worldId": "hoennia",
+    "bannerId": "hoennia_standard",
+    "classId": "vanguardia",
+    "rarity": 4,
+    "lore": "Una unidad robótica alienígena de rastreo y recuperación, programada para localizar artefactos de su civilización y eliminar toda interferencia.",
+    "portrait": "assets/characters/portrait/vex9.png",
+    "sprite": "assets/characters/sprite/vex9.png",
+    "stats": {
+      "hp": 322,
+      "attack": 52,
+      "defense": 82,
+      "speed": 87
+    },
+    "provisionalClass": true
+  },
+  {
+    "id": "general_atlas",
+    "name": "General Atlas",
+    "worldId": "hoennia",
+    "bannerId": "hoennia_standard",
+    "classId": "guardian",
+    "rarity": 5,
+    "lore": "Comandante supremo de las fuerzas armadas de Hoennia. Para él, la seguridad nacional está por encima de la ética.",
+    "portrait": "assets/characters/portrait/generalatlas.png",
+    "sprite": "assets/characters/sprite/generalatlas.png",
+    "stats": {
+      "hp": 388,
+      "attack": 52,
+      "defense": 106,
+      "speed": 78
+    },
+    "provisionalClass": true
+  },
+  {
+    "id": "doctora_iris",
+    "name": "Doctora Iris",
+    "worldId": "hoennia",
+    "bannerId": "hoennia_standard",
+    "classId": "apoyo",
+    "rarity": 2,
+    "lore": "Una brillante médica que opera al margen de la ley y ofrece tratamiento gratuito a civiles que no pueden acudir al sistema oficial.",
+    "portrait": "assets/characters/portrait/doctorairis.png",
+    "sprite": "assets/characters/sprite/doctorairis.png",
+    "stats": {
+      "hp": 210,
+      "attack": 38,
+      "defense": 48,
+      "speed": 92
+    }
+  },
+  {
+    "id": "blackjack",
+    "name": "Blackjack",
+    "worldId": "hoennia",
+    "bannerId": "hoennia_standard",
+    "classId": "tirador",
+    "rarity": 4,
+    "lore": "Un ladrón de guante blanco que usa dispositivos de ilusión y cartas explosivas, adhesivas y cegadoras para convertir cada robo en un espectáculo.",
+    "portrait": "assets/characters/portrait/blackjack.png",
+    "sprite": "assets/characters/sprite/blackjack.png",
+    "stats": {
+      "hp": 217,
+      "attack": 77,
+      "defense": 42,
+      "speed": 117
+    },
+    "provisionalClass": true
+  },
+  {
+    "id": "grizzly",
+    "name": "Grizzly",
+    "worldId": "hoennia",
+    "bannerId": "hoennia_standard",
+    "classId": "vanguardia",
+    "rarity": 4,
+    "lore": "Un luchador fusionado con ADN de oso sangriento. Es la atracción principal de un coliseo clandestino que él mismo abastece de combatientes.",
+    "portrait": "assets/characters/portrait/grizzly.png",
+    "sprite": "assets/characters/sprite/grizzly.png",
+    "stats": {
+      "hp": 322,
+      "attack": 52,
+      "defense": 82,
+      "speed": 87
+    },
+    "provisionalClass": true
+  },
+  {
+    "id": "raven",
+    "name": "Raven",
+    "worldId": "hoennia",
+    "bannerId": "hoennia_standard",
+    "classId": "tirador",
+    "rarity": 5,
+    "lore": "Una cazarrecompensas letal cuya única lealtad pertenece al mejor postor. Cumple cada encargo sin dejar rastro.",
+    "portrait": "assets/characters/portrait/raven.png",
+    "sprite": "assets/characters/sprite/raven.png",
+    "stats": {
+      "hp": 238,
+      "attack": 84,
+      "defense": 46,
+      "speed": 120
+    },
+    "provisionalClass": true
+  }
+]

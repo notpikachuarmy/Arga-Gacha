@@ -1,0 +1,137 @@
+[
+  {
+    "id": "colmillo_escarlata",
+    "name": "Colmillo Escarlata",
+    "worldId": "hoennia",
+    "classId": "vanguardia",
+    "boss": false,
+    "lore": "Un lobo colosal de pelaje gris ceniza y rojo carmesí, con colmillos capaces de triturar metal.",
+    "sprite": "assets/enemies/colmilloescarlata.png",
+    "stats": {
+      "hp": 330,
+      "attack": 48,
+      "defense": 48,
+      "speed": 78
+    }
+  },
+  {
+    "id": "golem_basaltico",
+    "name": "Gólem Basáltico",
+    "worldId": "hoennia",
+    "classId": "guardian",
+    "boss": false,
+    "lore": "Un coloso de roca volcánica unido por una fuerza gravitatoria, cubierto de runas y grietas de magma.",
+    "sprite": "assets/enemies/golembasaltico.png",
+    "stats": {
+      "hp": 390,
+      "attack": 42,
+      "defense": 86,
+      "speed": 55
+    }
+  },
+  {
+    "id": "avispa_titan",
+    "name": "Avispa Titán",
+    "worldId": "hoennia",
+    "classId": "tirador",
+    "boss": false,
+    "lore": "Un insecto volador gigantesco con exoesqueleto negro y amarillo y un aguijón tan largo como una daga.",
+    "sprite": "assets/enemies/avispatitan.png",
+    "stats": {
+      "hp": 220,
+      "attack": 60,
+      "defense": 32,
+      "speed": 125
+    }
+  },
+  {
+    "id": "sombra_hambrienta",
+    "name": "Sombra Hambrienta",
+    "worldId": "hoennia",
+    "classId": "irregular",
+    "boss": false,
+    "lore": "Una masa bidimensional de oscuridad pura capaz de alzarse como garras y fauces que absorben la luz.",
+    "sprite": "assets/enemies/sombrahambrienta.png",
+    "stats": {
+      "hp": 230,
+      "attack": 67,
+      "defense": 25,
+      "speed": 118
+    }
+  },
+  {
+    "id": "maton",
+    "name": "Matón",
+    "worldId": "hoennia",
+    "classId": "duelista",
+    "boss": false,
+    "lore": "Un delincuente armado con un bate claveteado o una pesada cadena de moto.",
+    "sprite": "assets/enemies/maton.png",
+    "stats": {
+      "hp": 250,
+      "attack": 55,
+      "defense": 40,
+      "speed": 88
+    }
+  },
+  {
+    "id": "contrabandista",
+    "name": "Contrabandista",
+    "worldId": "hoennia",
+    "classId": "tirador",
+    "boss": false,
+    "lore": "Un traficante armado con pistola y subfusil, preparado para repeler emboscadas.",
+    "sprite": "assets/enemies/contrabandista.png",
+    "stats": {
+      "hp": 230,
+      "attack": 58,
+      "defense": 38,
+      "speed": 98
+    }
+  },
+  {
+    "id": "monarca_cumbre",
+    "name": "Monarca de la Cumbre",
+    "worldId": "hoennia",
+    "classId": "tirador",
+    "boss": true,
+    "lore": "Un águila titánica de plumaje de acero cuyas alas desatan viento helado.",
+    "sprite": "assets/enemies/monarcadelacumbre.png",
+    "stats": {
+      "hp": 900,
+      "attack": 92,
+      "defense": 75,
+      "speed": 115
+    }
+  },
+  {
+    "id": "fauces_gigantes",
+    "name": "Fauces Gigantes",
+    "worldId": "hoennia",
+    "classId": "guardian",
+    "boss": true,
+    "lore": "Un caimán colosal cubierto de lodo petrificado, raíces y ácido corrosivo.",
+    "sprite": "assets/enemies/faucesgigantes.png",
+    "stats": {
+      "hp": 1100,
+      "attack": 85,
+      "defense": 105,
+      "speed": 48
+    }
+  },
+  {
+    "id": "tigre_obsidiana",
+    "name": "Tigre de Obsidiana",
+    "worldId": "hoennia",
+    "classId": "duelista",
+    "boss": true,
+    "lore": "Un felino gigantesco de pelaje negro y colmillos de cristal, veloz y calculador.",
+    "sprite": "assets/enemies/tigredeobsidiana.png",
+    "stats": {
+      "hp": 850,
+      "attack": 110,
+      "defense": 68,
+      "speed": 120
+    }
+  }
+]

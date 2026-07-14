@@ -1,0 +1,32 @@
+[
+  {
+    "id": "hoennia_standard",
+    "worldId": "hoennia",
+    "name": "Ecos de Hoennia",
+    "image": "assets/banner/hoennia.png",
+    "featuredCharacterIds": [
+      "caballero_mariposa",
+      "detective_lince",
+      "capitan_blaze",
+      "iron_thunder",
+      "el_arquitecto",
+      "rey_abeja",
+      "aguijon",
+      "sacerdotisa_chime",
+      "xenotar",
+      "vex_9",
+      "general_atlas",
+      "doctora_iris",
+      "blackjack",
+      "grizzly",
+      "raven"
+    ],
+    "ticketCost": 1,
+    "rates": {
+      "5": 0.05,
+      "4": 0.15,
+      "3": 0.3,
+      "2": 0.5
+    }
+  }
+]
