@@ -63,6 +63,7 @@ class MainScene extends Phaser.Scene{
   scrollMoved=false;
   interactionReadyAt=0;
   screenEpoch=0;
+  private activeInteractives=new Set<Phaser.GameObjects.GameObject>();
   constructor(){super('main');}
   preload(){
     this.load.image('logo',path('assets/ui/logo.png'));this.load.image('ticket',path('assets/ui/ticketgacha.png'));this.load.image('fragment',path('assets/ui/fragmentos.png'));
@@ -72,31 +73,61 @@ class MainScene extends Phaser.Scene{
     characters.forEach(c=>{this.load.image(`portrait-${c.id}`,path(c.portrait));this.load.image(`char-${c.id}`,path(c.sprite));});
     enemies.forEach(e=>this.load.image(`enemy-${e.id}`,path(e.sprite)));
   }
-  create(){this.renderHome();}
+  create(){
+    this.input.setTopOnly(true);
+    this.renderHome();
+  }
   clear(){
     this.screenEpoch++;
+    const epoch=this.screenEpoch;
+    this.input.enabled=false;
+    for(const obj of this.activeInteractives){
+      const interactive=obj as Phaser.GameObjects.GameObject&{disableInteractive?:()=>unknown;removeAllListeners?:()=>unknown;};
+      interactive.disableInteractive?.();
+      interactive.removeAllListeners?.();
+    }
+    this.activeInteractives.clear();
     this.tweens.killAll();
     this.input.removeAllListeners();
     this.children.removeAll(true);
     this.focusedEnemy=null;
-    this.interactionReadyAt=this.time.now+120;
+    this.scrollMoved=false;
+    this.interactionReadyAt=this.time.now+180;
+
+    // Captura cualquier pulsación realizada fuera de los controles de la pantalla actual.
+    // Esto evita que zonas vacías alcancen objetos antiguos que Phaser aún esté retirando.
+    const shield=this.add.rectangle(640,360,1280,720,0x000000,0.001).setDepth(-10000).setInteractive();
+    shield.on('pointerdown',(p:Phaser.Input.Pointer)=>p.event.stopPropagation());
+    shield.on('pointerup',(p:Phaser.Input.Pointer)=>p.event.stopPropagation());
+    this.activeInteractives.add(shield);
+
+    this.time.delayedCall(90,()=>{
+      if(epoch===this.screenEpoch)this.input.enabled=true;
+    });
   }
   activateOnRelease(obj:Phaser.GameObjects.GameObject,fn:()=>void,options:{allowAfterScroll?:boolean}={}){
     const interactive=obj as any;
+    const ownerEpoch=this.screenEpoch;
+    const ownerScreen=this.screen;
     interactive.setInteractive({useHandCursor:true});
+    this.activeInteractives.add(obj);
+    obj.once(Phaser.GameObjects.Events.DESTROY,()=>this.activeInteractives.delete(obj));
     let armedPointer=-1;
-    let armedEpoch=-1;
     interactive.on('pointerdown',(p:Phaser.Input.Pointer)=>{
       p.event.stopPropagation();
-      if(this.time.now<this.interactionReadyAt)return;
+      if(ownerEpoch!==this.screenEpoch||ownerScreen!==this.screen||this.time.now<this.interactionReadyAt)return;
       armedPointer=p.id;
-      armedEpoch=this.screenEpoch;
     });
     interactive.on('pointerup',(p:Phaser.Input.Pointer)=>{
       p.event.stopPropagation();
-      const valid=armedPointer===p.id&&armedEpoch===this.screenEpoch&&this.time.now>=this.interactionReadyAt&&(options.allowAfterScroll||!this.scrollMoved);
+      const valid=armedPointer===p.id&&ownerEpoch===this.screenEpoch&&ownerScreen===this.screen&&obj.active&&this.time.now>=this.interactionReadyAt&&(options.allowAfterScroll||!this.scrollMoved);
       armedPointer=-1;
-      if(valid)fn();
+      if(valid){
+        // Desarma inmediatamente toda interacción de la pantalla saliente.
+        // La función puede redibujar otra vista sin heredar este mismo gesto.
+        this.interactionReadyAt=this.time.now+180;
+        fn();
+      }
     });
     interactive.on('pointerout',()=>{armedPointer=-1;});
     interactive.on('pointerupoutside',()=>{armedPointer=-1;});
@@ -155,7 +186,7 @@ class MainScene extends Phaser.Scene{
     apply(0);
   }
   showTypeChart(){
-    const blocker=this.add.rectangle(640,360,1280,720,0x02050c,.88).setDepth(200).setInteractive();blocker.on('pointerdown',(p:Phaser.Input.Pointer)=>p.event.stopPropagation());blocker.on('pointerup',(p:Phaser.Input.Pointer)=>p.event.stopPropagation());
+    const blocker=this.add.rectangle(640,360,1280,720,0x02050c,.88).setDepth(200).setInteractive();this.activeInteractives.add(blocker);blocker.once(Phaser.GameObjects.Events.DESTROY,()=>this.activeInteractives.delete(blocker));blocker.on('pointerdown',(p:Phaser.Input.Pointer)=>p.event.stopPropagation());blocker.on('pointerup',(p:Phaser.Input.Pointer)=>p.event.stopPropagation());
     const box=this.add.rectangle(640,350,760,500,0x101a31,.99).setStrokeStyle(3,0xf2c45f).setDepth(201);
     this.txt(640,135,'TABLA DE VENTAJAS',30).setDepth(202);
     this.txt(640,175,'Cada clase inflige más daño a la clase indicada por la flecha.',16).setDepth(202);
@@ -163,7 +194,7 @@ class MainScene extends Phaser.Scene{
     const close=this.button(640,565,210,48,'CERRAR',()=>{[blocker,box,...this.children.list.filter(o=>(o as any).depth>=202)].forEach(o=>o.destroy());});close.r.setDepth(203);close.t.setDepth(204);
   }
 
-  renderHome(){this.screen='home';this.clear();this.baseBackground();this.header();this.add.image(640,150,'logo').setDisplaySize(310,190);this.txt(640,255,'Mundos distintos. Banners distintos. Una sola colección.',22);this.panel(640,435,780,280,.75);this.button(470,370,300,64,'INVOCAR',()=>this.renderGacha());this.button(810,370,300,64,'EXPEDICIONES',()=>this.renderExpeditions());this.button(470,465,300,64,'FORMAR EQUIPO',()=>this.renderTeam());this.button(810,465,300,64,'VER UNIDADES',()=>this.renderUnits());this.txt(640,555,'v0.5.2 · Clics seguros y fragmentación de repetidos',16);this.nav('home');}
+  renderHome(){this.screen='home';this.clear();this.baseBackground();this.header();this.add.image(640,150,'logo').setDisplaySize(310,190);this.txt(640,255,'Mundos distintos. Banners distintos. Una sola colección.',22);this.panel(640,435,780,280,.75);this.button(470,370,300,64,'INVOCAR',()=>this.renderGacha());this.button(810,370,300,64,'EXPEDICIONES',()=>this.renderExpeditions());this.button(470,465,300,64,'FORMAR EQUIPO',()=>this.renderTeam());this.button(810,465,300,64,'VER UNIDADES',()=>this.renderUnits());this.txt(640,555,'v0.5.3 · Aislamiento total de interacción por pantalla',16);this.nav('home');}
 
   renderGacha(){this.screen='gacha';this.clear();const banner=banners[this.save.selectedBanner%banners.length];this.add.image(640,360,`banner-${banner.id}`).setDisplaySize(1280,720);this.add.rectangle(640,360,1280,720,0x030713,.2);this.header('PORTAL DE INVOCACIÓN');this.add.rectangle(640,590,1280,260,0x07101f,.82);this.txt(640,500,banner.name.toUpperCase(),36);this.txt(640,542,worlds.find(w=>w.id===banner.worldId)?.description||'',17,.5,850);this.txt(640,578,`${star(5)} 5%  ·  ${star(4)} 15%  ·  ${star(3)} 30%  ·  ${star(2)} 50%`,16);this.button(475,635,275,58,`1 TIRADA · ${banner.ticketCost}`,()=>this.pull(1));this.button(805,635,275,58,`10 TIRADAS · ${banner.ticketCost*10}`,()=>this.pull(10));if(banners.length>1){this.button(65,345,70,90,'‹',()=>{this.save.selectedBanner=(this.save.selectedBanner-1+banners.length)%banners.length;saveGame(this.save);this.renderGacha();});this.button(1215,345,70,90,'›',()=>{this.save.selectedBanner=(this.save.selectedBanner+1)%banners.length;saveGame(this.save);this.renderGacha();});}this.nav('gacha');}
   pull(count:number){const banner=banners[this.save.selectedBanner%banners.length],cost=banner.ticketCost*count;if(this.save.tickets<cost){this.toast('No tienes tickets suficientes.');return;}this.save.tickets-=cost;const results:CharacterData[]=[];for(let i=0;i<count;i++){const r=Math.random();let rarity=2,acc=0;for(const value of [5,4,3,2]){acc+=banner.rates[String(value)]||0;if(r<=acc){rarity=value;break;}}const pool=characters.filter(c=>c.bannerId===banner.id&&c.rarity===rarity);const c=Phaser.Utils.Array.GetRandom(pool.length?pool:characters.filter(x=>x.bannerId===banner.id));this.save.units.push(starterUnit(c.id));if(!this.save.discovered.includes(c.id))this.save.discovered.push(c.id);results.push(c);}saveGame(this.save);this.summonQueue=results;this.summonIndex=0;this.renderSummon();}
@@ -228,7 +259,7 @@ class MainScene extends Phaser.Scene{
     if(!remove.length){this.toast('No hay repetidos seguros para fragmentar.');return;}
     const gain=remove.reduce((sum,u)=>sum+(charMap.get(u.characterId)?.rarity??1)*10,0);
     const blocker=this.add.rectangle(640,360,1280,720,0x02050c,.9).setDepth(200);
-    blocker.setInteractive();
+    blocker.setInteractive();this.activeInteractives.add(blocker);blocker.once(Phaser.GameObjects.Events.DESTROY,()=>this.activeInteractives.delete(blocker));
     blocker.on('pointerdown',(p:Phaser.Input.Pointer)=>p.event.stopPropagation());
     blocker.on('pointerup',(p:Phaser.Input.Pointer)=>p.event.stopPropagation());
     const box=this.add.rectangle(640,350,680,330,0x101a31,.99).setStrokeStyle(3,0xf2c45f).setDepth(201);
