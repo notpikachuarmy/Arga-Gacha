@@ -14,6 +14,18 @@
       "attack": 90,
       "defense": 52,
       "speed": 116
+    },
+    "activeSkill": {
+      "name": "Vendaval de Mariposas",
+      "description": "Ataque concentrado que inflige 180% de ATQ a un enemigo.",
+      "target": "single",
+      "power": 1.8
+    },
+    "passiveSkill": {
+      "name": "Manto Sagrado",
+      "description": "Aumenta sus PV un 15%.",
+      "stat": "hp",
+      "value": 0.15
     }
   },
   {
@@ -31,6 +43,18 @@
       "attack": 43,
       "defense": 87,
       "speed": 74
+    },
+    "activeSkill": {
+      "name": "Interposición",
+      "description": "Golpea a un enemigo con 130% de ATQ.",
+      "target": "single",
+      "power": 1.3
+    },
+    "passiveSkill": {
+      "name": "Instinto Protector",
+      "description": "Aumenta su DEF un 20%.",
+      "stat": "defense",
+      "value": 0.2
     }
   },
   {
@@ -48,6 +72,18 @@
       "attack": 62,
       "defense": 34,
       "speed": 110
+    },
+    "activeSkill": {
+      "name": "Descarga de Manguera",
+      "description": "Ataca a todos los enemigos con 85% de ATQ.",
+      "target": "allEnemies",
+      "power": 0.85
+    },
+    "passiveSkill": {
+      "name": "Último Rescate",
+      "description": "Aumenta su ATQ un 12%.",
+      "stat": "attack",
+      "value": 0.12
     }
   },
   {
@@ -65,6 +101,18 @@
       "attack": 90,
       "defense": 52,
       "speed": 116
+    },
+    "activeSkill": {
+      "name": "Tormenta de Tesla",
+      "description": "Ataca a todos los enemigos con 105% de ATQ.",
+      "target": "allEnemies",
+      "power": 1.05
+    },
+    "passiveSkill": {
+      "name": "Sobrecarga Militar",
+      "description": "Aumenta el daño causado un 12%.",
+      "stat": "damage",
+      "value": 0.12
     }
   },
   {
@@ -82,6 +130,18 @@
       "attack": 47,
       "defense": 97,
       "speed": 76
+    },
+    "activeSkill": {
+      "name": "Muro Imposible",
+      "description": "Inflige 145% de ATQ a un enemigo.",
+      "target": "single",
+      "power": 1.45
+    },
+    "passiveSkill": {
+      "name": "Geometría Perfecta",
+      "description": "Aumenta su DEF un 24%.",
+      "stat": "defense",
+      "value": 0.24
     }
   },
   {
@@ -99,6 +159,18 @@
       "attack": 47,
       "defense": 60,
       "speed": 98
+    },
+    "activeSkill": {
+      "name": "Orden de la Colmena",
+      "description": "Cura a todos los aliados según el 95% de su ATQ.",
+      "target": "allAllies",
+      "power": 0.95
+    },
+    "passiveSkill": {
+      "name": "Zumbido Coordinado",
+      "description": "Aumenta la VEL un 12%.",
+      "stat": "speed",
+      "value": 0.12
     }
   },
   {
@@ -116,6 +188,18 @@
       "attack": 47,
       "defense": 74,
       "speed": 84
+    },
+    "activeSkill": {
+      "name": "Toxina Terminal",
+      "description": "Inflige 170% de ATQ a un enemigo.",
+      "target": "single",
+      "power": 1.7
+    },
+    "passiveSkill": {
+      "name": "Asesino de la Colmena",
+      "description": "Aumenta el daño causado un 10%.",
+      "stat": "damage",
+      "value": 0.1
     }
   },
   {
@@ -133,6 +217,18 @@
       "attack": 79,
       "defense": 71,
       "speed": 109
+    },
+    "activeSkill": {
+      "name": "Cántico Disonante",
+      "description": "Ataca a todos los enemigos con 110% de ATQ.",
+      "target": "allEnemies",
+      "power": 1.1
+    },
+    "passiveSkill": {
+      "name": "Frecuencia Profana",
+      "description": "Aumenta su ATQ un 18%.",
+      "stat": "attack",
+      "value": 0.18
     }
   },
   {
@@ -150,6 +246,18 @@
       "attack": 66,
       "defense": 38,
       "speed": 106
+    },
+    "activeSkill": {
+      "name": "Corte de Plasma",
+      "description": "Inflige 155% de ATQ a un enemigo.",
+      "target": "single",
+      "power": 1.55
+    },
+    "passiveSkill": {
+      "name": "Superviviente Estelar",
+      "description": "Aumenta sus PV un 10%.",
+      "stat": "hp",
+      "value": 0.1
     }
   },
   {
@@ -168,7 +276,19 @@
       "defense": 82,
       "speed": 87
     },
-    "provisionalClass": true
+    "provisionalClass": true,
+    "activeSkill": {
+      "name": "Protocolo de Barrido",
+      "description": "Ataca a todos los enemigos con 90% de ATQ.",
+      "target": "allEnemies",
+      "power": 0.9
+    },
+    "passiveSkill": {
+      "name": "Blindaje Adaptativo",
+      "description": "Aumenta su DEF un 18%.",
+      "stat": "defense",
+      "value": 0.18
+    }
   },
   {
     "id": "general_atlas",
@@ -186,7 +306,19 @@
       "defense": 106,
       "speed": 78
     },
-    "provisionalClass": true
+    "provisionalClass": true,
+    "activeSkill": {
+      "name": "Orden de Supresión",
+      "description": "Inflige 150% de ATQ a un enemigo.",
+      "target": "single",
+      "power": 1.5
+    },
+    "passiveSkill": {
+      "name": "Mando Supremo",
+      "description": "Aumenta sus PV un 20%.",
+      "stat": "hp",
+      "value": 0.2
+    }
   },
   {
     "id": "doctora_iris",
@@ -203,6 +335,18 @@
       "attack": 38,
       "defense": 48,
       "speed": 92
+    },
+    "activeSkill": {
+      "name": "Tratamiento de Urgencia",
+      "description": "Cura al aliado con menos vida según el 180% de su ATQ.",
+      "target": "lowestAlly",
+      "power": 1.8
+    },
+    "passiveSkill": {
+      "name": "Manos Expertas",
+      "description": "Aumenta sus curaciones un 20%.",
+      "stat": "healing",
+      "value": 0.2
     }
   },
   {
@@ -221,7 +365,19 @@
       "defense": 42,
       "speed": 117
     },
-    "provisionalClass": true
+    "provisionalClass": true,
+    "activeSkill": {
+      "name": "Baraja Explosiva",
+      "description": "Ataca a todos los enemigos con 95% de ATQ.",
+      "target": "allEnemies",
+      "power": 0.95
+    },
+    "passiveSkill": {
+      "name": "Golpe de Suerte",
+      "description": "Aumenta su VEL un 15%.",
+      "stat": "speed",
+      "value": 0.15
+    }
   },
   {
     "id": "grizzly",
@@ -239,7 +395,19 @@
       "defense": 82,
       "speed": 87
     },
-    "provisionalClass": true
+    "provisionalClass": true,
+    "activeSkill": {
+      "name": "Embate Sangriento",
+      "description": "Inflige 175% de ATQ a un enemigo.",
+      "target": "single",
+      "power": 1.75
+    },
+    "passiveSkill": {
+      "name": "Furia de Arena",
+      "description": "Aumenta su ATQ un 16%.",
+      "stat": "attack",
+      "value": 0.16
+    }
   },
   {
     "id": "raven",
@@ -257,6 +425,18 @@
       "defense": 46,
       "speed": 120
     },
-    "provisionalClass": true
+    "provisionalClass": true,
+    "activeSkill": {
+      "name": "Disparo de Ejecución",
+      "description": "Inflige 190% de ATQ a un enemigo.",
+      "target": "single",
+      "power": 1.9
+    },
+    "passiveSkill": {
+      "name": "Contrato Perfecto",
+      "description": "Aumenta el daño causado un 14%.",
+      "stat": "damage",
+      "value": 0.14
+    }
   }
 ]
